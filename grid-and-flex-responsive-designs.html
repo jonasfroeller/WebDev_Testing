@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex & Grid - Responsive Designs</title>
+
+    <style>
+        .grid {
+            outline: 8px solid purple;
+            --min-column-width: 10rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(min(var(--min-column-width), 100%), 1fr));
+        }
+
+        .flex {
+            outline: 8px solid purple;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .flex>* {
+            min-width: 5rem;
+            min-width: 10rem;
+            flex: 1;
+        }
+
+        .item {
+            height: 5rem;
+            background-color: black;
+        }
+
+        .options {
+            --gap: 1rem;
+            outline: 8px solid purple;
+            display: grid;
+            gap: var(--gap);
+            scroll-padding: calc(var(--gap) / 2);
+            grid-auto-flow: column;
+            grid-auto-columns: calc(5rem - (var(--gap) / 2));
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+
+        .options>* {
+            aspect-ratio: 1/1;
+            scroll-snap-align: start;
+        }
+
+        .sidebar-layout {
+            height: fit-content;
+            outline: 8px solid purple;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .sidebar-layout>main {
+            flex-basis: 50rem;
+            flex-grow: 999;
+            background-color: black;
+            color: white;
+        }
+
+        .sidebar-layout>aside {
+            flex-basis: 10rem;
+            flex-grow: 1;
+            background-color: #000;
+            color: #fff;
+            height: 100%;
+        }
+
+        hr {
+            margin: 1rem;
+            border: 8px dashed darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <hr>
+
+    <div class="flex">
+        <div class="item"></div>
+        <div class=" item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <hr>
+
+    <div class="options">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <hr>
+
+    <div class="sidebar-layout">
+        <main>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, expedita voluptatum libero nam assumenda
+            magnam optio numquam cupiditate eaque explicabo debitis natus maiores repellendus totam doloremque obcaecati
+            inventore sunt ut eligendi dignissimos dolor tempora placeat est. Vitae eligendi corrupti facilis, ut quod,
+            ex ipsa maxime voluptas obcaecati, natus fuga necessitatibus eos deleniti dolorum modi minus saepe magnam
+            laudantium totam voluptate id dolor quae. Magni id animi, temporibus harum quis dolores sunt corrupti
+            distinctio. Aspernatur voluptate fuga id est neque earum dolore porro ipsum eligendi numquam? Nesciunt
+            necessitatibus unde repellendus officia, at saepe provident quo numquam vero dignissimos, expedita
+            praesentium dolores facere ducimus, soluta enim obcaecati perspiciatis labore ullam inventore blanditiis
+            illum corrupti sed ipsam. Nisi numquam corporis harum quibusdam nam minima dolorem blanditiis eveniet
+            voluptates at laboriosam, mollitia tenetur laborum quas suscipit delectus porro, sint, molestias fugit
+            assumenda fuga. At laudantium facilis veritatis dolores, consequuntur tenetur fuga eius in labore sit nisi
+            molestiae repellendus voluptate corporis enim atque quasi quaerat, consectetur aspernatur nemo.
+            Exercitationem dolore ab culpa deserunt voluptates nobis debitis, aut rerum nisi ullam vitae laudantium
+            voluptatibus eveniet ipsum dolores illo. Distinctio consequatur commodi sit dignissimos numquam ut dicta
+            quisquam nostrum officiis delectus modi quod saepe iure laborum animi a reprehenderit blanditiis atque,
+            molestias at? Quaerat eveniet accusamus ab iste, nam nulla minima architecto soluta modi ipsum amet! Quo
+            pariatur rerum ea distinctio nobis officiis unde aspernatur assumenda fugiat reiciendis, deserunt, similique
+            reprehenderit expedita laborum atque minus deleniti exercitationem perspiciatis possimus necessitatibus
+            illum est! Consequuntur animi quisquam at excepturi ipsa a odio nam necessitatibus ab nulla! Recusandae
+            temporibus officia adipisci accusamus sequi, eveniet voluptatum nesciunt fuga dolores ea accusantium
+            eligendi, vero nam, aspernatur quibusdam illo sunt. Nihil harum eaque, architecto animi vero perferendis,
+            eum aut at vitae similique, dicta maxime! Sapiente quo voluptates eos ex inventore ipsum illo, enim
+            consequuntur aperiam aspernatur. Dolor magni harum aliquid hic, odit consequuntur dolore, culpa eius
+            repellendus beatae provident quam repellat porro laudantium eos assumenda fugit ullam veritatis commodi
+            asperiores. Inventore suscipit doloremque, corporis voluptas animi vero consequatur velit eos, ratione iusto
+            earum! Iste ipsum voluptas delectus reprehenderit sint sapiente exercitationem illo aut minima. Consequuntur
+            cum, numquam quaerat sit illum eum, ullam modi est asperiores temporibus repellat fugit voluptatem, saepe
+            maxime totam. Minus quasi dolores officia obcaecati officiis. Velit debitis in aliquid earum voluptate qui
+            rerum. Temporibus id nobis sapiente sit eos nulla! Voluptatem commodi modi ab nam ad ratione dolor quam.
+            Ratione deserunt vitae quaerat ipsam placeat magni nihil odit. Suscipit accusantium dolorem officiis odio
+            nemo soluta eaque quaerat odit possimus explicabo, magni error id laboriosam labore delectus optio! Quasi
+            quibusdam adipisci amet expedita, autem sed cum, labore, quisquam sit ullam voluptates accusantium quod eos
+            nihil beatae nam iusto et iure quia iste nostrum. Aliquam maxime dolore officiis? At, nostrum. Temporibus
+            possimus ipsa at quasi, nam quidem illo enim dolor omnis culpa fugit eum cumque. Rem quam est voluptas
+            consequuntur iste saepe voluptate consequatur repellendus suscipit doloremque mollitia repudiandae
+            accusamus, molestias dolore eveniet iusto non. Quis quas voluptatem corrupti ipsum distinctio sapiente
+            officia est excepturi commodi exercitationem similique ducimus, quibusdam illum sed hic accusantium ex
+            labore voluptatibus ratione molestias sit! Ab earum delectus impedit doloremque a repellat sint sed adipisci
+            laudantium id similique, maiores suscipit molestiae porro excepturi esse illo ex obcaecati magnam aliquid in
+            expedita? Cupiditate quae ipsum maxime fugiat fugit vitae voluptatum illo consequatur nostrum doloremque
+            necessitatibus dolorum dolor repudiandae corporis eos minima quia voluptates, similique, corrupti impedit
+            commodi aliquid culpa dignissimos? Quidem deserunt minima quas fugit velit praesentium perferendis,
+            voluptates nobis maxime rem totam ea autem excepturi aliquam ad iste quibusdam temporibus unde eligendi,
+            incidunt quae? Id ipsa doloremque voluptates fuga pariatur optio similique qui aut! Iste odio repellendus
+            quam doloribus architecto quae tempora blanditiis laudantium quas, cumque eum corporis iusto earum totam
+            consequatur, numquam illum rerum ex error suscipit, mollitia veritatis assumenda praesentium? Laboriosam
+            saepe, fugiat voluptate inventore, excepturi atque a velit, corporis mollitia illo odit sed illum
+            perferendis vero impedit. Quasi ea repellat quas iure eos! Ea nesciunt hic maxime in architecto ipsam
+            dignissimos! Ab beatae veniam tempore dolores sint consectetur velit voluptatum odio itaque necessitatibus
+            consequuntur corrupti, culpa eaque debitis iure in accusantium? Dicta perferendis consequatur optio, autem
+            sequi nulla! Quia ducimus illum non quis perspiciatis sequi, error ut eius nobis facere, at commodi, iusto
+            est expedita ab sed praesentium vero nisi. Officia molestias reiciendis, voluptas saepe dignissimos quasi
+            ratione voluptatibus, consectetur veniam cum, quibusdam vel illum accusamus. Veritatis, odio quia?
+        </main>
+        <aside>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </aside>
+    </div>
+</body>
+
+</html>
