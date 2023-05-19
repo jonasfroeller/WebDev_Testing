@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Car body */
+        #car {
+            position: absolute;
+            z-index: 999;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            height: 80px;
+            background-color: #333;
+            border-radius: 10px;
+            border-top-left-radius: 2.5rem;
+            transition: border-radius 0.3s;
+            --position: 20px;
+        }
+
+        /* Car windows */
+        #car:before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: left 0.3s;
+            left: var(--position);
+        }
+
+        /* Car wheels */
+        #car .wheel {
+            position: absolute;
+            bottom: -20px;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        #car .wheel.left {
+            left: 20px;
+        }
+
+        #car .wheel.right {
+            right: 20px;
+        }
+
+        .city {
+            display: flex;
+            gap: 2px;
+        }
+
+        .house {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .roof {
+            background-color: red;
+            background-image: url("./roof.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50px;
+            aspect-ratio: 1/1;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .body {
+            background-color: grey;
+            background-image: url("./body.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 50px;
+            aspect-ratio: 1/1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+
+    <div class="city">
+        <div class="house">
+            <div class="roof"></div>
+            <div class="body"></div>
+        </div>
+        <div class="house">
+            <div class="roof"></div>
+            <div class="body"></div>
+        </div>
+        <div class="house">
+            <div class="roof"></div>
+            <div class="body"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <script>
+        let car = document.querySelector('#car');
+        let carPosition = 10;
+        const carWidth = car.offsetWidth;
+        const windowWidth = window.innerWidth;
+
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode === 37) { // Left arrow key
+                carPosition += 10;
+                if (carPosition > windowWidth - carWidth - 10) {
+                    carPosition = windowWidth - carWidth - 10;
+                }
+                car.style.right = carPosition + 'px';
+                car.style.borderTopLeftRadius = '2.5rem';
+                car.style.borderTopRightRadius = '10px';
+                car.style.setProperty('--position', '20px');
+            } else if (event.keyCode === 39) { // Right arrow key
+                carPosition -= 10;
+                if (carPosition < 10) {
+                    carPosition = 10;
+                }
+                car.style.right = carPosition + 'px';
+                car.style.borderTopLeftRadius = '10px';
+                car.style.borderTopRightRadius = '2.5rem';
+                car.style.setProperty('--position', '140px');
+            }
+        });
+
+    </script>
+</body>
+
+</html>
